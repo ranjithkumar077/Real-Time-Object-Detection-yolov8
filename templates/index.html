@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Object Detection System using YOLOv8</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="shell">
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="brand-mark">YO</div>
+                <div>
+                    <span>YOLOv8 Vision</span>
+                    <small>Detection Console</small>
+                </div>
+            </div>
+            <nav>
+                <button class="nav-btn active" data-target="webcamPanel">Live Webcam</button>
+                <button class="nav-btn" data-target="imagePanel">Image Detect</button>
+                <button class="nav-btn" data-target="videoPanel">Video Detect</button>
+                <button class="nav-btn" data-target="historyPanel">History Logs</button>
+            </nav>
+            <div class="system-card">
+                <span class="pulse"></span>
+                <div>
+                    <strong>AI Engine Ready</strong>
+                    <small>YOLOv8 + OpenCV</small>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main">
+            <header class="hero">
+                <div>
+                    <p class="eyebrow">Real-Time Object Detection System using YOLOv8</p>
+                    <h1>Colorful precision vision dashboard</h1>
+                    <p class="subcopy">Detect objects from live camera, uploaded images, and videos with stronger YOLOv8 accuracy, confidence scores, class counts, FPS, downloads, screenshots, and detection logs.</p>
+                </div>
+                <div class="hero-actions">
+                    <button class="ghost-btn" id="fullscreenBtn">Full Screen</button>
+                    <a class="ghost-btn" href="/download_history">Export Logs</a>
+                </div>
+            </header>
+
+            <section class="controls">
+                <label>
+                    Confidence
+                    <input id="confidence" type="range" min="0.1" max="0.9" step="0.05" value="0.25">
+                    <span id="confidenceValue">25%</span>
+                </label>
+                <label>
+                    Detection Quality
+                    <select id="qualityMode">
+                        <option value="balanced" selected>Balanced Accuracy</option>
+                        <option value="accurate">High Accuracy</option>
+                        <option value="fast">Fast Preview</option>
+                    </select>
+                </label>
+                <label>
+                    Built-in Model
+                    <select id="modelPreset">
+                        <option value="yolov8s.pt" selected>YOLOv8s Better</option>
+                        <option value="yolov8m.pt">YOLOv8m Strong</option>
+                        <option value="yolov8n.pt">YOLOv8n Fast</option>
+                    </select>
+                </label>
+                <label>
+                    Camera Index
+                    <input id="cameraIndex" type="number" value="0" min="0">
+                </label>
+                <label>
+                    Custom YOLO Model
+                    <input id="customModel" type="file" accept=".pt">
+                </label>
+                <button class="primary-btn" id="uploadModelBtn">Upload Model</button>
+            </section>
+
+            <section class="stats">
+                <article>
+                    <span>Total Objects</span>
+                    <strong id="totalObjects">0</strong>
+                </article>
+                <article>
+                    <span>FPS</span>
+                    <strong id="fpsValue">0</strong>
+                </article>
+                <article>
+                    <span>Classes</span>
+                    <strong id="classCount">0</strong>
+                </article>
+                <article>
+                    <span>Status</span>
+                    <strong id="statusText">Idle</strong>
+                </article>
+            </section>
+
+            <div class="grid">
+                <section class="panel active" id="webcamPanel">
+                    <div class="panel-head">
+                        <div>
+                            <h2>Live Webcam Detection</h2>
+                            <p>Start the camera stream, monitor FPS, trigger browser voice alerts, and capture screenshots.</p>
+                        </div>
+                        <div class="button-row">
+                            <button class="primary-btn" id="startWebcamBtn">Start</button>
+                            <button class="danger-btn" id="stopWebcamBtn">Stop</button>
+                            <button class="ghost-btn" id="screenshotBtn">Screenshot</button>
+                        </div>
+                    </div>
+                    <div class="viewer live-viewer">
+                        <img id="webcamFeed" alt="Live webcam feed">
+                        <div class="empty-state" id="webcamEmpty">Camera preview appears here</div>
+                    </div>
+                </section>
+
+                <section class="panel" id="imagePanel">
+                    <div class="panel-head">
+                        <div>
+                            <h2>Image Upload Detection</h2>
+                            <p>Upload an image and receive a professionally annotated result with class counts.</p>
+                        </div>
+                    </div>
+                    <form id="imageForm" class="upload-box">
+                        <input type="file" name="image" accept="image/*" required>
+                        <button class="primary-btn" type="submit">Detect Image</button>
+                    </form>
+                    <div class="viewer">
+                        <img id="imageResult" alt="Detected image result">
+                        <div class="empty-state">Processed image appears here</div>
+                    </div>
+                    <a class="download-link" id="imageDownload" hidden>Download Result</a>
+                </section>
+
+                <section class="panel" id="videoPanel">
+                    <div class="panel-head">
+                        <div>
+                            <h2>Video File Detection</h2>
+                            <p>Process videos frame by frame and export the final annotated video.</p>
+                        </div>
+                    </div>
+                    <form id="videoForm" class="upload-box">
+                        <input type="file" name="video" accept="video/*" required>
+                        <button class="primary-btn" type="submit">Detect Video</button>
+                    </form>
+                    <div class="viewer">
+                        <video id="videoResult" controls></video>
+                        <div class="empty-state">Processed video appears here</div>
+                    </div>
+                    <a class="download-link" id="videoDownload" hidden>Download Result</a>
+                </section>
+
+                <section class="panel" id="historyPanel">
+                    <div class="panel-head">
+                        <div>
+                            <h2>Detection History</h2>
+                            <p>Review saved outputs, source type, timestamps, and object-count summaries.</p>
+                        </div>
+                        <button class="ghost-btn" id="refreshHistoryBtn">Refresh</button>
+                    </div>
+                    <div class="table-wrap">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Time</th>
+                                    <th>Source</th>
+                                    <th>File</th>
+                                    <th>Total</th>
+                                    <th>Counts</th>
+                                    <th>Output</th>
+                                </tr>
+                            </thead>
+                            <tbody id="historyBody"></tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <aside class="summary-panel">
+                    <h2>Detection Summary</h2>
+                    <div id="loading" class="loading" hidden>
+                        <span></span><span></span><span></span>
+                    </div>
+                    <div id="summaryList" class="summary-list">
+                        <p>No detections yet.</p>
+                    </div>
+                    <div class="alert-box">
+                        <strong>Voice Alerts</strong>
+                        <p>Browser voice alerts trigger when person, car, or cell phone is detected.</p>
+                    </div>
+                </aside>
+            </div>
+        </main>
+    </div>
+    <div id="toast" class="toast"></div>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

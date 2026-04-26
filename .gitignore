@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+*.pyc
+*.pt
+static/uploads/*
+static/outputs/*
+static/screenshots/*
+logs/detection_history.csv
+server.out.log
+server.err.log
+Ultralytics/
+models/Ultralytics/
+!logs/.gitkeep

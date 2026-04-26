@@ -1,0 +1,46 @@
+<svg width="1280" height="720" viewBox="0 0 1280 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1280" height="720" fill="#070912"/>
+  <circle cx="180" cy="80" r="230" fill="#00D4FF" opacity=".18"/>
+  <circle cx="1060" cy="90" r="240" fill="#FF4FD8" opacity=".13"/>
+  <circle cx="740" cy="680" r="260" fill="#24FF9A" opacity=".10"/>
+  <rect x="36" y="32" width="260" height="656" rx="24" fill="#0D1426" stroke="#263653"/>
+  <rect x="64" y="64" width="58" height="58" rx="16" fill="url(#g1)"/>
+  <text x="82" y="101" font-family="Inter,Arial" font-size="24" font-weight="800" fill="#041019">YO</text>
+  <text x="138" y="88" font-family="Inter,Arial" font-size="22" font-weight="800" fill="white">YOLOv8 Vision</text>
+  <text x="138" y="114" font-family="Inter,Arial" font-size="15" fill="#A8B5C7">Detection Console</text>
+  <rect x="64" y="164" width="196" height="48" rx="14" fill="#172033"/>
+  <text x="88" y="195" font-family="Inter,Arial" font-size="18" font-weight="700" fill="white">Live Webcam</text>
+  <text x="88" y="258" font-family="Inter,Arial" font-size="18" fill="#A8D9FF">Image Detect</text>
+  <text x="88" y="322" font-family="Inter,Arial" font-size="18" fill="#A8D9FF">Video Detect</text>
+  <text x="88" y="386" font-family="Inter,Arial" font-size="18" fill="#A8D9FF">History Logs</text>
+  <rect x="330" y="46" width="894" height="118" rx="24" fill="#101624" stroke="#263653"/>
+  <text x="362" y="86" font-family="Inter,Arial" font-size="16" font-weight="800" fill="#24FF9A">REAL-TIME OBJECT DETECTION SYSTEM USING YOLOV8</text>
+  <text x="362" y="132" font-family="Inter,Arial" font-size="42" font-weight="900" fill="white">Colorful precision vision dashboard</text>
+  <rect x="330" y="188" width="894" height="82" rx="20" fill="#101624" stroke="#263653"/>
+  <rect x="358" y="214" width="166" height="32" rx="10" fill="#0B111D" stroke="#33435F"/>
+  <rect x="548" y="214" width="166" height="32" rx="10" fill="#0B111D" stroke="#33435F"/>
+  <rect x="738" y="214" width="166" height="32" rx="10" fill="#0B111D" stroke="#33435F"/>
+  <rect x="1042" y="208" width="142" height="44" rx="12" fill="url(#g1)"/>
+  <text x="1072" y="236" font-family="Inter,Arial" font-size="15" font-weight="800" fill="#041019">Upload Model</text>
+  <rect x="330" y="294" width="600" height="364" rx="24" fill="#050914" stroke="#00D4FF" opacity=".95"/>
+  <rect x="366" y="334" width="198" height="142" rx="16" fill="#111A2E" stroke="#00D4FF"/>
+  <rect x="406" y="374" width="118" height="62" rx="10" fill="#00D4FF" opacity=".22"/>
+  <text x="391" y="520" font-family="Inter,Arial" font-size="18" font-weight="800" fill="#00D4FF">person 91.4%</text>
+  <rect x="612" y="386" width="216" height="118" rx="16" fill="#111A2E" stroke="#FFB100"/>
+  <text x="646" y="548" font-family="Inter,Arial" font-size="18" font-weight="800" fill="#FFB100">car 88.2%</text>
+  <rect x="956" y="294" width="268" height="364" rx="24" fill="#101624" stroke="#263653"/>
+  <text x="986" y="338" font-family="Inter,Arial" font-size="24" font-weight="800" fill="white">Detection Summary</text>
+  <rect x="986" y="374" width="208" height="52" rx="14" fill="#12253A" stroke="#00D4FF"/>
+  <text x="1008" y="407" font-family="Inter,Arial" font-size="18" font-weight="800" fill="white">person</text>
+  <text x="1160" y="407" font-family="Inter,Arial" font-size="18" font-weight="800" fill="#24FF9A">1</text>
+  <rect x="986" y="444" width="208" height="52" rx="14" fill="#2A2114" stroke="#FFB100"/>
+  <text x="1008" y="477" font-family="Inter,Arial" font-size="18" font-weight="800" fill="white">car</text>
+  <text x="1160" y="477" font-family="Inter,Arial" font-size="18" font-weight="800" fill="#FFB100">1</text>
+  <defs>
+    <linearGradient id="g1" x1="64" y1="64" x2="1200" y2="252" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#00D4FF"/>
+      <stop offset=".5" stop-color="#24FF9A"/>
+      <stop offset="1" stop-color="#FFB100"/>
+    </linearGradient>
+  </defs>
+</svg>
