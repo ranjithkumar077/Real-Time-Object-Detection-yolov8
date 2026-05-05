@@ -1,4 +1,4 @@
-<img width="1917" height="970" alt="Screenshot 2026-05-05 094959" src="https://github.com/user-attachments/assets/886f9c0c-ae0d-477a-bc57-6c7bf876f8fb" /># 🚀 Real-Time Object Detection System using YOLOv8
+# 🚀 Real-Time Object Detection System using YOLOv8
 
 ![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![YOLOv8](https://img.shields.io/badge/YOLOv8-Ultralytics-ffb100?style=for-the-badge)
