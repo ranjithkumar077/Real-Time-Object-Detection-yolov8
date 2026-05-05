@@ -11,7 +11,7 @@ An attractive, colorful, professional AI dashboard that detects real-time object
 
 ### 🖥️ Modern Dashboard UI
 
-![Dashboard Preview](assets/demo/dashboard-preview.svg)
+<!-- Uploading "Screenshot 2026-05-05 093659.png"... -->
 
 ### 🎯 Sample Detection Output
 
