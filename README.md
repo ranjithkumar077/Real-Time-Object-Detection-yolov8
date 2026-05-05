@@ -1,4 +1,4 @@
-# 🚀 Real-Time Object Detection System using YOLOv8
+<img width="1917" height="970" alt="Screenshot 2026-05-05 094959" src="https://github.com/user-attachments/assets/886f9c0c-ae0d-477a-bc57-6c7bf876f8fb" /># 🚀 Real-Time Object Detection System using YOLOv8
 
 ![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![YOLOv8](https://img.shields.io/badge/YOLOv8-Ultralytics-ffb100?style=for-the-badge)
@@ -10,12 +10,9 @@ An attractive, colorful, professional AI dashboard that detects real-time object
 ## ✨ Project Preview
 
 ### 🖥️ Modern Dashboard UI
-
-<!-- Uploading "Screenshot 2026-05-05 093659.png"... -->
-
+<img width="1917" height="970" alt="Screenshot 2026-05-05 094959" src="https://github.com/user-attachments/assets/026ad74a-6540-4c44-aef2-ad1cb9a30e03" />
 ### 🎯 Sample Detection Output
-
-![Detection Result Preview](assets/demo/detection-preview.svg)
+<img width="1897" height="905" alt="Screenshot 2026-05-05 093829" src="https://github.com/user-attachments/assets/7a38efe9-ac37-46f4-a608-d761b19b027e" />
 
 ### 🎬 Demo Video
 
